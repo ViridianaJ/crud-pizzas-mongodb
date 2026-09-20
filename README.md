@@ -1,18 +1,59 @@
-# Tarea: Pizzas V2, iniciando con estructura de carpetas y archivos
+# CRUD de Pizzas con Node.js, Express y MongoDB
 
-## Endpoints
+## Descripción
 
-Listar todas las pizzas:
-- GET /api/v1/pizzas
+La tarea implementa un CRUD (Create, Read, Update, Delete) de pizzas utilizando Node.js, Express y MongoDB. Utilizando una lista en memoria para almacenar las pizzas. Posteriormente, se modificó el repositorio para utilizar MongoDB como sistema de almacenamiento.
 
-Obtener una pizza por ID:
-- GET /api/v1/pizzas/:id
+Las operaciones disponibles son:
 
-Agregar una pizza:
-- POST /api/v1/pizzas
+- Obtener todas las pizzas.
+- Obtener una pizza por su ID.
+- Agregar una nueva pizza.
+- Actualizar una pizza.
+- Eliminar una pizza.
 
-Actualizar una pizza:
-- PUT /api/v1/pizzas/:id
+## Tecnologías utilizadas y requisitos
 
-Eliminar una pizza:
-- DELETE /api/v1/pizzas/:id
+- Node.js
+- Express
+- MongoDB
+- MongoDB Compass
+- Docker
+- Postman
+- Nodemon
+
+
+## Instalación
+
+Primero se deben instalar las dependencias del proyecto.
+
+Desde la carpeta principal del proyecto ejecutar:
+
+```bash
+npm install
+
+ 
+
+Si el paquete no está instalado, ejecutar:
+npm install mongodb
+
+Configuración de MongoDB
+MongoDB se ejecuta mediante Docker y utiliza el puerto:
+27017
+
+La conexión utilizada por el proyecto es:
+mongodb://root:12345678@localhost:27017/
+
+La base de datos utilizada es:
+prueba
+
+Y la colección utilizada es:
+pizzas
+
+Para iniciar el servidor en modo desarrollo ejecutar:
+npm run dev
+
+El servidor se ejecuta en:
+http://localhost:3000
+
+ 
