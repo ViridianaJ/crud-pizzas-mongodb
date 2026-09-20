@@ -4,7 +4,7 @@
 
 La tarea implementa un CRUD (Create, Read, Update, Delete) de pizzas utilizando Node.js, Express y MongoDB.
 
-El proyecto originalmente utilizaba una lista en memoria para almacenar las pizzas. Posteriormente, se modificó el repositorio para utilizar MongoDB como sistema de almacenamiento permanente.
+Se modificó el repositorio para utilizar MongoDB como sistema de almacenamiento permanente.
 
 Las operaciones disponibles son:
 
