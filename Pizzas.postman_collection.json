@@ -1,0 +1,135 @@
+{
+  "info": {
+    "_postman_id": "528bf04d-081a-49bd-932a-f5de2d0a2a88",
+    "name": "Pizzas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57776363",
+    "_collection_link": "https://go.postman.co/collection/57776363-528bf04d-081a-49bd-932a-f5de2d0a2a88?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "pizzas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/pizzas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pizzas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pizza",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/pizzas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pizzas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pizza",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\":  3,\n   \n   \"nombre\": \"\",\n\n   \"ingredientes\": \"\"\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/pizzas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pizzas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pizza",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \"id\": 2,\n   \n   \"nombre\": \"4 QUESOS\",\n\n   \"ingredientes\": \"PURO QUESO\"\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/pizzas/2",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pizzas",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pizza",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \n   \"nombre\": \"pizzas actualizadas\",\n\n   \"descripcion\": \"no llevan nada\"\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/pizzas/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pizzas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
