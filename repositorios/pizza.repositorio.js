@@ -25,6 +25,31 @@ const baseDatos = cliente.db("prueba");
  */
 const pizzas = baseDatos.collection("pizzas");
 
+/**
+ * Conecta el programa con MongoDB.
+ *
+ * ¿Qué recibe?
+ * No recibe parámetros.
+ *
+ * ¿Qué hace?
+ * Establece la conexión con el servidor de MongoDB.
+ *
+ * ¿Qué devuelve?
+ * Devuelve una promesa que se resuelve cuando
+ * la conexión se establece correctamente.
+ */
+async function conectarMongoDB() {
+    await cliente.connect();
+}
+
+/**
+ * Conexión inicial con MongoDB.
+ *
+ * Se ejecuta una sola vez cuando se carga
+ * este archivo.
+ */
+await conectarMongoDB();
+
 
 /**
  * Obtiene todas las pizzas almacenadas en la colección "pizzas".

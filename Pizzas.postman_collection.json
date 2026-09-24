@@ -13,10 +13,12 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/api/v1/pizzas",
+          "raw": "http://localhost:3000/api/v1/pizzas",
+          "protocol": "http",
           "host": [
-            "{{baseUrl}}"
+            "localhost"
           ],
+          "port": "3000",
           "path": [
             "api",
             "v1",
@@ -28,18 +30,32 @@
     },
     {
       "name": "pizza",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"La pizza fue eliminada\", function () {\r\n    pm.response.to.have.status(404);\r\n});\r\n\r\npm.test(\"La respuesta indica que la pizza no existe\", function () {\r\n    const respuesta = pm.response.json();\r\n\r\n    pm.expect(respuesta).to.have.property(\"mensaje\");\r\n});"
+            ]
+          }
+        }
+      ],
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/api/v1/pizzas",
+          "raw": "http://localhost:3000/api/v1/pizzas/10",
+          "protocol": "http",
           "host": [
-            "{{baseUrl}}"
+            "localhost"
           ],
+          "port": "3000",
           "path": [
             "api",
             "v1",
-            "pizzas"
+            "pizzas",
+            "10"
           ]
         }
       },
@@ -47,12 +63,23 @@
     },
     {
       "name": "pizza",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"La pizza se creó correctamente\", function () {\r\n    pm.response.to.have.status(201);\r\n});\r\n\r\npm.test(\"La respuesta contiene los datos de la pizza\", function () {\r\n    const respuesta = pm.response.json();\r\n\r\n    pm.expect(respuesta).to.have.property(\"id\");\r\n    pm.expect(respuesta).to.have.property(\"nombre\");\r\n    pm.expect(respuesta).to.have.property(\"ingredientes\");\r\n});"
+            ]
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"id\":  3,\n   \n   \"nombre\": \"\",\n\n   \"ingredientes\": \"\"\n\n}",
+          "raw": "{\n  \"id\": 11,\n  \"nombre\": \"Pizza BBQ\",\n  \"ingredientes\": \"Queso, pollo, salsa BBQ y cebolla\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -60,10 +87,12 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/api/v1/pizzas",
+          "raw": "http://localhost:3000/api/v1/pizzas",
+          "protocol": "http",
           "host": [
-            "{{baseUrl}}"
+            "localhost"
           ],
+          "port": "3000",
           "path": [
             "api",
             "v1",
@@ -75,12 +104,23 @@
     },
     {
       "name": "pizza",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"La pizza se actualizó correctamente\", function () {\r\n    pm.response.to.have.status(202);\r\n});\r\n\r\npm.test(\"La respuesta confirma la actualización\", function () {\r\n    const respuesta = pm.response.json();\r\n\r\n    pm.expect(respuesta).to.have.property(\"mensaje\");\r\n});"
+            ]
+          }
+        }
+      ],
       "request": {
         "method": "PUT",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n   \"id\": 2,\n   \n   \"nombre\": \"4 QUESOS\",\n\n   \"ingredientes\": \"PURO QUESO\"\n\n}",
+          "raw": "{\n  \"nombre\": \"Pizza Mexicana Especial\",\n  \"ingredientes\": \"Queso Mozarella, chorizo, jalapeño, cebolla y extra queso\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -88,15 +128,17 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/api/v1/pizzas/2",
+          "raw": "http://localhost:3000/api/v1/pizzas/3",
+          "protocol": "http",
           "host": [
-            "{{baseUrl}}"
+            "localhost"
           ],
+          "port": "3000",
           "path": [
             "api",
             "v1",
             "pizzas",
-            "2"
+            "3"
           ]
         }
       },
@@ -104,6 +146,17 @@
     },
     {
       "name": "pizza",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"La pizza se eliminó correctamente\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"La respuesta confirma la eliminación\", function () {\r\n    const respuesta = pm.response.json();\r\n\r\n    pm.expect(respuesta).to.have.property(\"mensaje\");\r\n});"
+            ]
+          }
+        }
+      ],
       "request": {
         "method": "DELETE",
         "header": [],
@@ -117,15 +170,17 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/api/v1/pizzas/1",
+          "raw": "http://localhost:3000/api/v1/pizzas/8",
+          "protocol": "http",
           "host": [
-            "{{baseUrl}}"
+            "localhost"
           ],
+          "port": "3000",
           "path": [
             "api",
             "v1",
             "pizzas",
-            "1"
+            "8"
           ]
         }
       },
